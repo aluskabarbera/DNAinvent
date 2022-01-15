@@ -4,6 +4,7 @@ This application is to treat amino acid sequences.
 Requirements:
 Have the latest version of Python.
 Install or have the pip package manager installed. (It's very simple, there are many tutorials where they explain it.)
+And finally run the command pip3 install colorama in the terminal.
   
 How born this code:
 This program is the result of my interest in science, and the help of several programmers of a Discord servers. 
