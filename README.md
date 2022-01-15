@@ -18,7 +18,7 @@ Where in the end I added the CRISPR associated protein/cas9 and a function that 
    
 Functioning:
 It's very simple, you just have to read and follow the steps.
-In principle, it should only recognize the nitrogenous bases (A, T, U, C and G). You should write down the results.
+In principle, it should only recognize the nitrogenous bases (A, T, U, C and G). You must write down the results because they are not stored anywhere.
 Hope you enjoy the app. Ah, remember with great power comes great responsibility. 
 
 Acknowledgment:
