@@ -1,5 +1,7 @@
 import colorama
 
+colorama.init()
+
 print(
     """
             DNAinvent       v1.1
@@ -14,10 +16,10 @@ print(
     """
 )
 
-option = input(str("Choice your option: "))
+option = input(str("Please select a option: "))
 
 if option == "1":
-#·> DNA sequence and his double helix.
+#  DNA sequence and his double helix.
     def doublehelix(dna_string: str) -> str:
         complementary = {
         'A': 'T',
@@ -33,7 +35,7 @@ if option == "1":
     print(doublehelix(input("Input your DNA chain (A, C, G, T): ").upper()))
 
 elif option == "2":
-#·> Transcription DNA to RNA.
+#  Transcription DNA to RNA.
     def convertdnatorna(dna_string: str) -> str:
         RNA = {
         'A': 'A',
@@ -49,7 +51,7 @@ elif option == "2":
     print(convertdnatorna(input("Input your DNA chain (A, C, G, T): ").upper()))
 
 elif option == "3":
-#·> Translate RNA to aminoacids.
+#  Translate RNA to aminoacids.
     import collections
 
     aminoacids = {
@@ -110,7 +112,7 @@ elif option == "3":
     print(get_proteins())
 
 elif option == "4":
-#·> CRISPR/cas9
+#  CRISPR/cas9
     DNA = input("Input your DNA chain (A, C, G, T): ")
 
 #· Write the sequence of nitrogenous bases you want to change and write the new one. 
@@ -146,15 +148,15 @@ elif option == "*":
             1) Find DNA sequence in the original sequence.
             2) Compare whether the first or second amino acid sequence is: greater, lesser, equal, greater than or equal, lesser than or equal.
             3) Know the percentage that two DNA sequences have in common.
-            4) Permutations.
+            4) Generate permutations from the DNA sequence.
+
     """
 )
 
-    option2 = input(str("Choice your option: "))
+    option2 = input(str("Please select a option: "))
 
     if option2 == "1":
     #· Find DNA sequence in the original sequence.
-        colorama.init()
         str1 = input("Input your DNA chain (A, C, G, T): ")
         str2 = input("Insert the sequence you want to find: ")
         str1 = str1.replace(str2,f'\033[96m{str2}\033[0m')
@@ -210,6 +212,3 @@ elif option == "*":
 
         print(DNA)
         print(f'Number of permutations generated: {contador}.')
-
-
-
