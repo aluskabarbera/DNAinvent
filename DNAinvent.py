@@ -140,7 +140,7 @@ while True:
         def convertdnatobinary(dna_string: str) -> str:
             characters_str = str(len(dna_string))
             print("This sequence have " + characters_str + " characters")
-            d = {'A':'0001','T':'0010','G':'0011','C':'0100',}
+            d = {'A':'00000000','C':'00000001','G':'00000010','T':'00000011'}
             output = ''
             for nucleotid in dna_string:
                 output += d[nucleotid]
