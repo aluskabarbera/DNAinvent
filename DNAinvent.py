@@ -90,9 +90,7 @@ while True:
             return(input(
                 "Input the RNA chain (A, C, G, U): "
             ).upper())
-        characters_str = str(len(get_input()))
-        print("This sequence have " + characters_str + " characters")
-            
+        
     #· For 3 amino acid in DNA sequence, we obtain one codon.
         def cutted_surplus_translated(DNA):
             tmp = DNA[:len(DNA) - len(DNA)%3]
