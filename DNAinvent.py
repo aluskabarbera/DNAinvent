@@ -109,15 +109,10 @@ while True:
             DNA = get_input()
             characters_str = str(len(DNA))
             print("This sequence have " + characters_str + " characters")
-
-        
             protein = cutted_surplus_translated(DNA)
             print(protein)
-        
             print_frequencies(collections.Counter(protein))
-        
             return([key.get(i) for i in protein])
-
         print(get_proteins())
 
     elif option == "4":
@@ -139,17 +134,14 @@ while True:
             characters_str_change = str(len(change))
             print("This sequence have " + characters_str_change + " characters")
             return DNA_chain.replace(cutter, f'\033[96m{change}\033[0m')
-
         new_chain = cut(DNA)
         print(new_chain)
 
     elif option == "5":
     #· Convert DNA to binary.
-
         def convertdnatobinary(dna_string: str) -> str:
             characters_str = str(len(dna_string))
             print("This sequence have " + characters_str + " characters")
-
             d = {'A':'0001','T':'0010','G':'0011','C':'0100',}
             output = ''
             for nucleotid in dna_string:
@@ -157,7 +149,6 @@ while True:
                 if nucleotid not in d:
                     return(nucleotid + " is not a valid character. Run this option again.")
             return output
-
         print(convertdnatobinary(input("Input the DNA chain (A, C, G, T): ").upper()))
 
     elif option == "*":
@@ -223,7 +214,6 @@ while True:
                     if second[i] == l:
                         accuracy += 1
                 return accuracy/((len(first)+len(second))/2)*100
-
             print(similar(first, second), "%")
         
         elif option2 == "4":
@@ -237,16 +227,13 @@ while True:
             letras = [letra for letra in DNA if letra in 'ACTG' or 'actg']
             print(letras)
             print()
-
             permutaciones = [p for p in permutations(letras, permutation)]
-
             contador = 0
 
             for p in permutaciones:
                 print(p)
                 contador += 1
             print()
-
             print(DNA)
             print(f'Number of permutations generated: {contador}.')
         elif option2 == "5":
@@ -273,7 +260,6 @@ while True:
             # Every eight bits is a byte and we separate it with a colon (:).
             def binary_to_bytes(binary):
                 return ':'.join(binary[i:i+8] for i in range(0, len(binary), 8))
-
 
             # We store the bits in a string
             bytes = binary_to_bytes(random_binary(n))
