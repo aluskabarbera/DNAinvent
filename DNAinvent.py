@@ -1,5 +1,6 @@
 import colorama
 import random
+import time
 
 colorama.init()
 
@@ -251,36 +252,146 @@ while True:
             n = int(input("Enter the number of bits you want to generate: "))
             total_bytes = n/8
 
-            # We create a string that returns zeros and ones randomly.
-            def random_binary(n):
-                return ''.join(random.choice(bits) for _ in range(n))
+            # Generate random bits in a string.
+            bits_string = ''.join(random.choice(bits) for i in range(n))
 
-            # Every eight bits is a byte and we separate it with a colon (:).
-            def binary_to_bytes(binary):
-                return ':'.join(binary[i:i+8] for i in range(0, len(binary), 8))
+            # Every eight bits we generate a byte, separate it with : and store it in a string.
+            bytes_string = ':'.join(bits_string[i:i+8] for i in range(0, len(bits_string), 8))
 
-            # We store the bits in a string
-            bytes = binary_to_bytes(random_binary(n))
-
-            print("\nI show you the bytes that have coincided with some nitrogenous bases:\n")
-
-            for byte in bytes.split(':'):
+            print("\n[ 8 bits = 1 byte ]")
+            print("I show you the bytes that have coincided with some nitrogen_base:\n")
+                        
+            for byte in bytes_string.split(':'):
                 for nitrogen_base in nitrogenous_bases:
                     if nitrogen_base['Binary'] == byte:
-                        # We change the byte for the colored byte.
-                        bytes = bytes.replace(byte, nitrogen_base['Color_binary'])
-                        break
-            print(bytes)
+                        # Cambiamos todos los bytes por los bytes coloreados
+                        bytes_string = bytes_string.replace(byte, nitrogen_base['Color_binary'])
+                        # Cambiamos el nombre del nitrogen_baseo por el coloreado
+            print(bytes_string)
 
-            print("\nI show you the name of the nitrogenous bases that has matched:\n")
-            for byte_colored in range(len(bytes.split(':'))):
+            print("\nI show you the name of the nitrogen_base that has matched:\n")
+            for byte_colored in range(len(bytes_string.split(':'))):
                 for nitrogen_base in nitrogenous_bases:
-                    if nitrogen_base['Color_binary'] in bytes.split(':')[byte_colored]:
+                    if nitrogen_base['Color_binary'] in bytes_string.split(':')[byte_colored]:
                         # We change the colored byte for the colored name.
-                        bytes = bytes.replace(bytes.split(':')[byte_colored], nitrogen_base['Color_name'])
-                        break
-            print(bytes)
+                        bytes_string = bytes_string.replace(bytes_string.split(':')[byte_colored], nitrogen_base['Color_name'])
+            print(bytes_string)
+
             print("\nI have created", total_bytes, "bytes.")
+         
+            while True:
+                print("""
+                        [0]
+                            1] Show me the time it takes to generate each bit.
+                            2] Reverse the zeros for ones, and vice versa.
+                            3] Reverse the bit string.
+                            4] Change zeros to ones and flip the bit string.
+                """)
+
+                option = int(input("Enter the option you want to do: "))
+
+                if option == 0:
+                    print("Bye!")
+                    exit()
+                elif option == 1:
+                    # Show me the time it takes to generate each bit.
+                    print("\nTime to generate each bit: \n")
+                    for i in bits_string:
+                        print("The bit", i, "it has taken", time.time(), "milliseconds to generate.")
+                elif option == 2:
+                    # Convert the string to a list of bits.
+                    bits_list = list(bits_string)
+                    # We invert the zeros for ones and the ones for zeros.
+                    bits_list = [1 if x == '0' else 0 for x in bits_list]
+                    # We convert the list of bits to a string.
+                    bits_flipped_string = ''.join(str(x) for x in bits_list)
+                    # Every eight bits we generate a byte, separate it with : and store it in a string.
+                    bytes_flipped_string = ':'.join(bits_flipped_string[i:i+8] for i in range(0, len(bits_flipped_string), 8))
+
+                    print("\n[ 8 bits = 1 byte ]")
+                    print("I show you the bytes flipped from zeros to ones that have coincided with some nitrogen_base:\n")
+                                
+                    for byte in bytes_flipped_string.split(':'):
+                        for nitrogen_base in nitrogenous_bases:
+                            if nitrogen_base['Binary'] == byte:
+                                # Cambiamos todos los bytes por los bytes coloreados
+                                bytes_flipped_string = bytes_flipped_string.replace(byte, nitrogen_base['Color_binary'])
+                                # Cambiamos el nombre del nitrogen_baseo por el coloreado
+                    print(bytes_flipped_string)
+
+                    print("\nI show you the name of the nitrogen_base that has matched:\n")
+                    for byte_colored in range(len(bytes_flipped_string.split(':'))):
+                        for nitrogen_base in nitrogenous_bases:
+                            if nitrogen_base['Color_binary'] in bytes_flipped_string.split(':')[byte_colored]:
+                                # We change the colored byte for the colored name.
+                                bytes_flipped_string = bytes_flipped_string.replace(bytes_flipped_string.split(':')[byte_colored], nitrogen_base['Color_name'])
+                                break
+                    print(bytes_flipped_string)
+
+                    print("\nI have created", total_bytes, "bytes.")
+                elif option == 3:
+                    # We invert the bits so that they are in reverse order.
+                    bits_reverse_string = bits_string[::-1]
+
+                    # Every eight bits we generate a byte, separate it with : and store it in a string.
+                    bytes_reverse_string = ':'.join(bits_reverse_string[i:i+8] for i in range(0, len(bits_reverse_string), 8))
+                    print("\n[ 8 bits = 1 byte ]")
+                    print("I show you the bytes reversed that have coincided with some nitrogen_base:\n")
+                                
+                    for byte in bytes_reverse_string.split(':'):
+                        for nitrogen_base in nitrogenous_bases:
+                            if nitrogen_base['Binary'] == byte:
+                                # Cambiamos todos los bytes por los bytes coloreados
+                                bytes_reverse_string = bytes_reverse_string.replace(byte, nitrogen_base['Color_binary'])
+                                # Cambiamos el nombre del nitrogen_baseo por el coloreado
+                    print(bytes_reverse_string)
+
+                    print("\nI show you the name of the nitrogen_base that has matched:\n")
+                    for byte_colored in range(len(bytes_reverse_string.split(':'))):
+                        for nitrogen_base in nitrogenous_bases:
+                            if nitrogen_base['Color_binary'] in bytes_reverse_string.split(':')[byte_colored]:
+                                # We change the colored byte for the colored name.
+                                bytes_reverse_string = bytes_reverse_string.replace(bytes_reverse_string.split(':')[byte_colored], nitrogen_base['Color_name'])
+                                break
+                    print(bytes_reverse_string)
+
+                    print("\nI have created", total_bytes, "bytes.")
+                elif option == 4:
+                    print("\nString of bits ordered from end to begin with the zeros inverted by ones: \n")
+                    # We invert the bits so that they are in reverse order.
+                    bits_inverted_string = bits_string[::-1]
+                    # We convert the string into a list of bits.
+                    bits_inverted_list = list(bits_inverted_string)
+                    # We invert the zeros for ones and the ones for zeros.
+                    bits_inverted_list = [1 if x == '0' else 0 for x in bits_inverted_list]
+                    # We convert the list of bits to a string.
+                    bits_inverted_string = ''.join(str(x) for x in bits_inverted_list)
+
+                    # Every eight bits we generate a byte, separate it with : and store it in a string.
+                    bytes_inverted_string = ':'.join(bits_inverted_string[i:i+8] for i in range(0, len(bits_inverted_string), 8))
+                    print("\n[ 8 bits = 1 byte ]")
+                    print("I show you the bytes ordered from end to begin with the zeros inverted by ones that have coincided with some nitrogen_base:\n")
+                                
+                    for byte in bytes_inverted_string.split(':'):
+                        for nitrogen_base in nitrogenous_bases:
+                            if nitrogen_base['Binary'] == byte:
+                                # Cambiamos todos los bytes por los bytes coloreados
+                                bytes_inverted_string = bytes_inverted_string.replace(byte, nitrogen_base['Color_binary'])
+                                # Cambiamos el nombre del nitrogen_baseo por el coloreado
+                    print(bytes_inverted_string)
+
+                    print("\nI show you the name of the nitrogen_base that has matched:\n")
+                    for byte_colored in range(len(bytes_inverted_string.split(':'))):
+                        for nitrogen_base in nitrogenous_bases:
+                            if nitrogen_base['Color_binary'] in bytes_inverted_string.split(':')[byte_colored]:
+                                # We change the colored byte for the colored name.
+                                bytes_inverted_string = bytes_inverted_string.replace(bytes_inverted_string.split(':')[byte_colored], nitrogen_base['Color_name'])
+                                break
+                    print(bytes_inverted_string)
+
+                    print("\nI have created", total_bytes, "bytes.")
+                else:
+                    print("\nOption not valid, try again.")
         elif option2 == "0":
             print("Until next time.")
             exit()
@@ -293,3 +404,4 @@ while True:
     else:
         print("Invalid option.")
         print("Please, try again.")
+# A!Ü$KA
