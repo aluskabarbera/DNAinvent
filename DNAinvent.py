@@ -9,11 +9,11 @@ while True:
     """
             DNAinvent
         [0]
-            1) DNA sequence and his double helix.
-            2) Transcription DNA to RNA.
-            3) Translate RNA to amino acids.
-            4) CRISPR/cas9
-            5) Convert DNA to binary.
+            1] DNA sequence and his double helix.
+            2] Transcription DNA to RNA.
+            3] Translate RNA to amino acids.
+            4] CRISPR/cas9
+            5] Convert DNA to binary.
         [*]
 
     """)
@@ -155,11 +155,11 @@ while True:
         """
                 DNAtools
             [0]
-                1) Find DNA sequence in the original sequence.
-                2) Compare whether the first or second amino acid sequence is: greater, lesser, equal, greater than or equal, lesser than or equal.
-                3) Know the percentage that two DNA sequences have in common.
-                4) Generate permutations from the DNA sequence.
-                5) Generate a being from bits.
+                1] Find DNA sequence in the original sequence.
+                2] Compare whether the first or second amino acid sequence is: greater, lesser, equal, greater than or equal, lesser than or equal.
+                3] Know the percentage that two DNA sequences have in common.
+                4] Generate permutations from the DNA sequence.
+                5] Generate a being from bits.
 
         """)
 
@@ -291,7 +291,7 @@ while True:
                 option = int(input("Enter the option you want to do: "))
 
                 if option == 0:
-                    print("Bye!")
+                    print("Until next time.")
                     exit()
                 elif option == 1:
                     # Show me the time it takes to generate each bit.
