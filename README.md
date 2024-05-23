@@ -1,12 +1,12 @@
-# DNAinvent
+# DNAinvent 🧬
 This application is to treat amino acid sequences.
 
-# Requirements:
+# Requirements: ⚠️
 Have the latest version of Python.
 Install or have the pip package manager installed. (It's very simple, there are many tutorials where they explain it.)
 And finally run the command **'pip3 install colorama'** in the terminal.
   
-# How born this code:
+# How born this code: 💡
 This program is the result of my interest in science, and the help of several programmers of a Discord servers. 
 Where in 2021, I saw a video on YouTube where he explained that someone had associated nitrogenous bases with binary numbers (0; 1).
 So with my little knowledge of the logic of the Python programming language. I started.
@@ -16,12 +16,12 @@ So I kept scheduling and asking for help on various Discord servers.
 And over time this code was formed.
 Where in the end I added the CRISPR associated protein/cas9 and a function that do and count permutations.
    
-# Functioning:
+# Functioning: 🧠
 It's very simple, you just have to read and follow the steps.
 In principle, it should only recognize the nitrogenous bases (A, T, U, C and G). You must write down the results because they are not stored anywhere.
 Hope you enjoy the app. Ah, remember with great power comes great responsibility. 
 
-# Acknowledgment:
+# Acknowledgment: 🤗
 I thank all the programmers who have helped me, and myself.
 
 Maintenance:
